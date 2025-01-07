@@ -31,7 +31,19 @@ class Calculator:
             raise TypeError(
                 f"Please make sure you utilize one of the available separators: {separator_strings} "
             )
+
         return operators
+
+    def deny_large_numbers(self, operators: list, number_limit: int = 1000):
+        limited_operators = []
+        for operator in operators:
+            if int(operator) >= number_limit:
+                limited_operators.append(0)
+            else:
+                limited_operators.append(int(operator))
+                continue
+
+        return limited_operators
 
     def check_exact_quantity(self, operators: list, quantity: int = 2) -> list:
         if len(operators) != quantity:

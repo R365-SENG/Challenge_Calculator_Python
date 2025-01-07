@@ -1,4 +1,3 @@
-import re
 from calculator import Calculator
 
 
