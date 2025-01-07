@@ -23,15 +23,8 @@ class Calculator:
         )
         self.arguments = self.__get_math_function_arguments__()
 
-    def first_requirement(self):
-        arguments = self.arguments
-        separated_args = self.check_for_separator(arguments=arguments)
-        quantity_args = self.check_arg_quantity(operators=separated_args)
-        operators = self.__format_input__(operators=quantity_args)
-        result = self.addition(formatted_operators=operators)
-
     def check_for_separator(self, arguments: str, separator: str = ",") -> list:
-        arguments = arguments.strip()
+        arguments = arguments.strip(" ")
         if not separator in arguments:
             raise self.SeparatorError
         operators = arguments.split(separator)

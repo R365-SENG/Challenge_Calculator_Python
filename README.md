@@ -44,7 +44,7 @@ Requirements:
         empty input or missing numbers should be converted to 0
         invalid numbers should be converted to 0 e.g. 5,tytyt will return 5
 
--    2. Remove the maximum constraint for numbers e.g. 1,2,3,4,5,6,7,8,9,10,11,12 will return 78
++    2. Remove the maximum constraint for numbers e.g. 1,2,3,4,5,6,7,8,9,10,11,12 will return 78
 
 -    3. Support a newline character as an alternative delimiter e.g. 1\n2,3 will return 6
 
