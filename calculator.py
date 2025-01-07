@@ -17,14 +17,23 @@ class Calculator:
         """
         self.arguments = self.__get_math_function_arguments__()
 
-    # Separator is a protected keyword in Python, added"_string."
-    def check_for_separator(self, arguments: str, separator_string: str = ",") -> list:
+    # Separator is a protected keyword in Python. Default separator is a comma.
+    def check_for_separator(
+        self, arguments: str, separator_strings: list = [","]
+    ) -> list:
         arguments = arguments.strip(" ")
-        if not separator_string in arguments:
+        operators = []
+        for string in separator_strings:
+            if string in arguments:
+                args = arguments.split(string)
+            else:
+                args = []
+            operators = operators + args
+
+        if len(operators) < 2:
             raise TypeError(
-                f'Please make sure you separate number input with the separator " {separator_string} ".'
+                f"Please make sure you utilize one of the available separators: {separator_strings} "
             )
-        operators = arguments.split(separator_string)
         return operators
 
     def check_exact_quantity(self, operators: list, quantity: int = 2) -> list:

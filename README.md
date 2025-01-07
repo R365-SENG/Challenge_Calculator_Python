@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
 To Do:
 ----------
- - Requirements 2 through 7
+ - Requirements 4 through 7
 _______________________________________________________________________________________________________________________________________________
 
 Requirements:
@@ -67,7 +67,7 @@ ________________________________________________________________________________
 Stretch Goals:
 --------------
 
-    1. Display the formula used to calculate the result e.g. 2,,4,rrrr,1001,6 will return 2+0+4+0+0+6 = 12
++    1. Display the formula used to calculate the result e.g. 2,,4,rrrr,1001,6 will return 2+0+4+0+0+6 = 12
     2. Allow the application to process entered entries until Ctrl+C is used
     4. Allow the acceptance of arguments to define...
         alternate delimiter in step #3
