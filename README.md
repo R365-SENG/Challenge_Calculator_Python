@@ -57,10 +57,10 @@ Requirements:
         - examples: //#\n2#5 will return 7; //,\n2,ff,100 will return 102
         - all previous formats should also be supported
         
-+-    7. Support 1 custom delimiter of any length using the format: //[{delimiter}]\n{numbers}
++    7. Support 1 custom delimiter of any length using the format: //[{delimiter}]\n{numbers}
         - example: //[***]\n11***22***33 will return 66
         - all previous formats should also be supported
-+-    8. Support multiple delimiters of any length using the format: //[{delimiter1}][{delimiter2}]...\n{numbers}
++    8. Support multiple delimiters of any length using the format: //[{delimiter1}][{delimiter2}]...\n{numbers}
         - example: //[*][!!][r9r]\n11r9r22*hh*33!!44 will return 110
         - all previous formats should also be supported
 
@@ -70,10 +70,10 @@ Stretch Goals:
 --------------
 
 ++    1. Display the formula used to calculate the result e.g. 2,,4,rrrr,1001,6 will return 2+0+4+0+0+6 = 12
-+-    2. Allow the application to process entered entries until Ctrl+C is used
-+-    4. Allow the acceptance of arguments to define...
-+-        alternate delimiter in step #3
-+-        toggle whether to deny negative numbers in step #4
-+-        upper bound in step #5
-+-    5. Use DI
-+-    6. Support subtraction, multiplication, and division operations
++    2. Allow the application to process entered entries until Ctrl+C is used
++    4. Allow the acceptance of arguments to define...
+        - alternate delimiter in step #3
+        - toggle whether to deny negative numbers in step #4
+        - upper bound in step #5
++    5. Use DI
++    6. Support subtraction, multiplication, and division operations
