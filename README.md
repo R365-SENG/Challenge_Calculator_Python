@@ -50,7 +50,7 @@ Requirements:
 
 +    4. Deny negative numbers by throwing an exception that includes all of the negative numbers provided
 
--    5. Make any value greater than 1000 an invalid number e.g. 2,1001,6 will return 8
++    5. Make any value greater than 1000 an invalid number e.g. 2,1001,6 will return 8
     
 -    6. Support 1 custom delimiter of a single character using the format: //{delimiter}\n{numbers}
         - examples: //#\n2#5 will return 7; //,\n2,ff,100 will return 102
