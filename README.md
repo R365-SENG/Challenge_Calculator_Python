@@ -1,17 +1,6 @@
 Summary:
 -------------
-A calculator that only supports an Add operation given a single formatted string
-
-
-Challenge Notes:
--------------
-    Provide code via a public distributed version control repository i.e. GitHub. Do NOT fork this repo
-    Console application using the language defined by your interviewer
-    Include unit tests
-    Show each requirement step as a separate commit. Think of each step as a "requirement change"
-    Efficient code is always important but for this excercise... readability and separation of concerns are much more critical
-    Excluding stretch goals will not affect your overall assessment but implementing them poorly will
-_______________________________________________________________________________________________
+A calculator that supports mathematical operations given a single formatted string.
 
 Install:
 -------------
@@ -23,17 +12,34 @@ Windows:
 Usage:
 -------------
 
-The Calculator class has several type-checking methods available, limiting number of inputs, the type of separators that can be used, and the input format itself. 
-The default checks conform to the restrictions of the first requirements, but can be overridden. An instance of the class will be created in its own file for each requirement, so execution can be checked based on evolving requirements at each stage of the project.
-Execute the file using:
+The Calculator base class has several type-checking methods available, limiting number of inputs, the type of separators that can be used, and the input format itself. It also contains the addition method. 
+The default checks conform to the restrictions of the first requirements, but can be overridden. An child instance of the class will be created in its own file for each requirement, so execution can be checked based on evolving requirements at each stage of the project. Each child class retains the functionality of the previous requirement unless doing so would directly conflict with the new requirement.
+Execute each file using:
 
 path/to/python3.exe "Path/to/Challenge/first_requirement.py"
 
-______________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________
 
 To Do:
 ----------
- - Requirements 5 through 7
+ - Requirements 7 and 8
+
+Evaluation:
+----------
+ - Completed challenge steps have a "+" sign to their left. Anything left on the list with a "-" is not yet implemented.
+
+_______________________________________________________________________________________________________________________________________________
+
+
+Challenge Notes:
+-------------
+    Provide code via a public distributed version control repository i.e. GitHub. Do NOT fork this repo
+    Console application using the language defined by your interviewer
+    Include unit tests
+    Show each requirement step as a separate commit. Think of each step as a "requirement change"
+    Efficient code is always important but for this excercise... readability and separation of concerns are much more critical
+    Excluding stretch goals will not affect your overall assessment but implementing them poorly will
+
 _______________________________________________________________________________________________________________________________________________
 
 Requirements:
@@ -52,7 +58,7 @@ Requirements:
 
 +    5. Make any value greater than 1000 an invalid number e.g. 2,1001,6 will return 8
     
--    6. Support 1 custom delimiter of a single character using the format: //{delimiter}\n{numbers}
++    6. Support 1 custom delimiter of a single character using the format: //{delimiter}\n{numbers}
         - examples: //#\n2#5 will return 7; //,\n2,ff,100 will return 102
         - all previous formats should also be supported
 -    7. Support 1 custom delimiter of any length using the format: //[{delimiter}]\n{numbers}
@@ -68,10 +74,10 @@ Stretch Goals:
 --------------
 
 +    1. Display the formula used to calculate the result e.g. 2,,4,rrrr,1001,6 will return 2+0+4+0+0+6 = 12
-    2. Allow the application to process entered entries until Ctrl+C is used
-    4. Allow the acceptance of arguments to define...
-        alternate delimiter in step #3
-        toggle whether to deny negative numbers in step #4
-        upper bound in step #5
-    5. Use DI
-    6. Support subtraction, multiplication, and division operations
+-    2. Allow the application to process entered entries until Ctrl+C is used
+-    4. Allow the acceptance of arguments to define...
+-        alternate delimiter in step #3
+-        toggle whether to deny negative numbers in step #4
+-        upper bound in step #5
+-    5. Use DI
+-    6. Support subtraction, multiplication, and division operations
