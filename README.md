@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
 To Do:
 ----------
- - Requirements 4 through 7
+ - Requirements 5 through 7
 _______________________________________________________________________________________________________________________________________________
 
 Requirements:
@@ -46,9 +46,9 @@ Requirements:
 
 +    2. Remove the maximum constraint for numbers e.g. 1,2,3,4,5,6,7,8,9,10,11,12 will return 78
 
--    3. Support a newline character as an alternative delimiter e.g. 1\n2,3 will return 6
++    3. Support a newline character as an alternative delimiter e.g. 1\n2,3 will return 6
 
--    4. Deny negative numbers by throwing an exception that includes all of the negative numbers provided
++    4. Deny negative numbers by throwing an exception that includes all of the negative numbers provided
 
 -    5. Make any value greater than 1000 an invalid number e.g. 2,1001,6 will return 8
     

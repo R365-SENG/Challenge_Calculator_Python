@@ -24,11 +24,8 @@ class Calculator:
         arguments = arguments.strip(" ")
         operators = []
         for string in separator_strings:
-            if string in arguments:
-                args = arguments.split(string)
-            else:
-                args = []
-            operators = operators + args
+            arguments = arguments.replace(string, " ")
+        operators = arguments.split(" ")
 
         if len(operators) < 2:
             raise TypeError(
@@ -41,9 +38,23 @@ class Calculator:
             raise TypeError(f"Please make sure you input {quantity} numbers.")
         return operators
 
-    def check_minimum_quantity(self, operators: list, quantity: int = 2):
+    def check_minimum_quantity(self, operators: list, quantity: int = 2) -> list:
         if len(operators) < quantity:
             raise self.QuantityError
+        return operators
+
+    def deny_negative_inputs(
+        self,
+        operators: list,
+        denied_formats: re.Pattern = re.compile(r"(^[(-][0-9.]*[)]?$)"),
+    ) -> list:
+        for n in operators:
+            if re.match(denied_formats, n):
+                raise TypeError(
+                    f"Negative numbers are not accepted. The negative number you entered was {n}. Please enter positive numbers only."
+                )
+            else:
+                pass
         return operators
 
     def __format_input__(
@@ -54,7 +65,7 @@ class Calculator:
         """Default accepted_formats pattern includes all positive and negative numbers.
         It also permits parentheses, minus signs, and decimal periods."""
         formatted_operators = [
-            float(n) if re.match(accepted_formats, n) else float(0) for n in operators
+            int(n) if re.match(accepted_formats, n) else int(0) for n in operators
         ]
         return formatted_operators
 
@@ -64,7 +75,7 @@ class Calculator:
         )
         return arguments
 
-    def addition(self, formatted_operators: list) -> float:
+    def addition(self, formatted_operators: list) -> int:
         result = sum(formatted_operators)
         printable_operation = (
             f"{' + '.join([str(number) for number in formatted_operators])} = "
