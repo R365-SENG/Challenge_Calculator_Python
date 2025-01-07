@@ -18,7 +18,7 @@ Install:
 Windows:
 - mkdir 
 - cd 
-- git clone []
+- git clone [https://github.com/R365-SENG/Challenge_Calculator.git]
 
 Usage:
 -------------
