@@ -15,23 +15,25 @@ class Calculator:
         check_arg_quantity      Optional. Limits the quantity of numbers accepted as input. Default is 2.
 
         """
-        self.QuantityError = TypeError(
-            "Please limit your input to two numbers, separated by a comma."
-        )
-        self.SeparatorError = TypeError(
-            "Please make sure you separate number inputs with a comma."
-        )
         self.arguments = self.__get_math_function_arguments__()
 
-    def check_for_separator(self, arguments: str, separator: str = ",") -> list:
+    # Separator is a protected keyword in Python, added"_string."
+    def check_for_separator(self, arguments: str, separator_string: str = ",") -> list:
         arguments = arguments.strip(" ")
-        if not separator in arguments:
-            raise self.SeparatorError
-        operators = arguments.split(separator)
+        if not separator_string in arguments:
+            raise TypeError(
+                f'Please make sure you separate number input with the separator " {separator_string} ".'
+            )
+        operators = arguments.split(separator_string)
         return operators
 
-    def check_arg_quantity(self, operators: list, quantity: int = 2) -> list:
+    def check_exact_quantity(self, operators: list, quantity: int = 2) -> list:
         if len(operators) != quantity:
+            raise TypeError(f"Please make sure you input {quantity} numbers.")
+        return operators
+
+    def check_minimum_quantity(self, operators: list, quantity: int = 2):
+        if len(operators) < quantity:
             raise self.QuantityError
         return operators
 

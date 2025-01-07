@@ -1,16 +1,19 @@
 from calculator import Calculator
 
 
-class Requirements(Calculator):
+class Two(Calculator):
     def __init__(self):
         super().__init__()
 
     def second(self):
         arguments = self.arguments
         separated_args = self.check_for_separator(arguments=arguments)
-        operators = self.__format_input__(operators=separated_args)
+        quantity_args = self.check_minimum_quantity(operators=separated_args)
+        operators = self.__format_input__(operators=quantity_args)
         result = self.addition(formatted_operators=operators)
+        return result
 
 
-Completed = Requirements()
-Completed.second()
+if __name__ == "__main__":
+    Completed = Two()
+    Completed.first()
